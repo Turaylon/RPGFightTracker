@@ -24,5 +24,15 @@ export class AppComponent implements OnInit {
         .startGame()
     );
 
+    console.log("First Round is for " + this.gameService.game.getRound().owner.name);
+    console.log("Next Round is for " + this.gameService.game.getRound().owner.name);
+    console.log("Next Round is for " + this.gameService.game.getRound().owner.name);
+    console.log("Next Round is for " + this.gameService.game.getRound().owner.name);
+    console.log("Next Round is for " + this.gameService.game.getRound().owner.name);
+    console.log("Next Round is for " + this.gameService.game.getRound().owner.name);
+    console.log("Next Round is for " + this.gameService.game.getRound().owner.name);
+    console.log("Next Round is for " + this.gameService.game.getRound().owner.name);
+
+
   }
 }
