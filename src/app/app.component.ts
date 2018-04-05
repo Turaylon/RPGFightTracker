@@ -29,9 +29,15 @@ export class AppComponent implements OnInit {
     console.log("Next Round is for " + this.gameService.game.getRound().owner.name);
     console.log("Next Round is for " + this.gameService.game.getRound().owner.name);
     console.log("Next Round is for " + this.gameService.game.getRound().owner.name);
+
+    console.log("Adding new NPC Drogon" , this.gameService.addNPC(new NPC("Drogon",100,25,NPCAttitude.ALLY)));
     console.log("Next Round is for " + this.gameService.game.getRound().owner.name);
     console.log("Next Round is for " + this.gameService.game.getRound().owner.name);
     console.log("Next Round is for " + this.gameService.game.getRound().owner.name);
+    console.log("Next Round is for " + this.gameService.game.getRound().owner.name);
+    console.log("Next Round is for " + this.gameService.game.getRound().owner.name);
+
+    console.log(this.gameService);
 
 
   }

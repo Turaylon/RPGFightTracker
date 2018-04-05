@@ -1,36 +1,35 @@
-import {Injectable} from '@angular/core';
+import {EventEmitter, Injectable} from '@angular/core';
 import {Player} from '../models/Player';
 import {NPC} from '../models/NPC';
 import {Game} from '../models/Game';
+import {Character} from '../models/Character';
 
 @Injectable()
 export class GameService {
 
-  public readonly players: Player[] = [];
-
-  public readonly npcs: NPC[] = [];
-
   public game: Game;
 
-  constructor() {
+  public charactersChanged : EventEmitter<Character[]>;
 
+  constructor() {
+    this.charactersChanged = new EventEmitter<Character[]>();
+    this.game = new Game();
   }
 
   public addPlayer(player: Player): GameService{
-    this.players.push(player);
+    this.game.addPlayer(player);
+    this.charactersChanged.emit(this.game.getCharacters());
     return this;
   }
 
   public addNPC(npc: NPC): GameService{
-    this.npcs.push(npc);
+    this.game.addNPC(npc);
+    this.charactersChanged.emit(this.game.getCharacters());
     return this;
   }
 
   public startGame() : Game{
-    let characters = [];
-    this.players.forEach(player => characters.push(player));
-    this.npcs.forEach(npc => characters.push(npc));
-    return this.game = new Game(characters);
+    return this.game.initGame();
   }
 
 
