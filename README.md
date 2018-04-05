@@ -1,5 +1,25 @@
 # RPGFightTracker
 
+## What is it
+
+RPG Fight Tracker ( from now on RpgFT) is an app that helps you to keep tracks on games “Round” based.
+
+In every RPG a round is a distinct fraction of time where an entity (player or npc) is allowed to do something.
+
+Every entity has its own round, and the rounds are sorted by a value called Initiative.
+An entity have always stats like Vitality Point, Bonus and Malus. Every Bonus and Malus have a specific round duration. Vitality points may change on multiple rounds.
+
+## Use Case
+
+Let’s say we have 2 players: John Snow and Arya Stark; 2 enemies of the type of White Walkers. 
+
+The master should be able to put in the entities list all the player and the NPCs.
+Then should be signed the initiative roll of each entity and vitality points.
+
+
+
+## Tecnology
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.7.3.
 
 ## Development server
