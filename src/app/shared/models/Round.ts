@@ -2,6 +2,13 @@ import {Character} from './Character';
 import {Action} from './Action';
 
 export class Round {
-  protected owner: Character;
-  protected action: Action;
+  public actions: Action[];
+
+  constructor(public owner: Character) {
+  }
+
+  public addAction(action: Action): Round {
+    this.actions.push(action);
+    return this;
+  }
 }

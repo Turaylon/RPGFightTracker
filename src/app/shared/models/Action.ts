@@ -6,4 +6,9 @@ export class Action {
   constructor(public description) {
 
   }
+
+  public addEffect(effect: Effect) {
+    this.effects.push(effect);
+    return this;
+  }
 }

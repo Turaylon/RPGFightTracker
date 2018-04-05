@@ -3,10 +3,11 @@ import {Malus} from './Malus';
 
 
 export abstract class Character {
-  protected bonuses: Bonus[] = [];
-  protected maluses: Malus[] = [];
+  public bonuses: Bonus[] = [];
+  public maluses: Malus[] = [];
+  public initiative: number = 0;
 
-  constructor(public name, public vitalPoints) {
-
+  constructor(public name : string, public vitalPoints: number, initiative = 0)  {
+      this.initiative = initiative;
   }
 }
