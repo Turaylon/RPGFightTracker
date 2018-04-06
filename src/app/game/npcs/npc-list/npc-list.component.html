@@ -1,3 +1,18 @@
-<p>
-  npc-list works!
-</p>
+<div>
+  <button class="btn btn-primary mb-3" (click)="addNewNPC()">Add NPC</button>
+
+  <div class="list-group">
+
+    <div *ngFor="let npc of npcs;" class="list-group-item list-group-item-action flex-column align-items-start mb-2">
+      <div class="d-flex w-100 justify-content-between">
+        <h5 class="mb-1">{{ npc.name }}</h5>
+        <small>PF: {{ npc.vitalPoints }}</small>
+      </div>
+      <small>Initiative: {{ npc.initiative }}</small>
+
+      <button class="btn btn-danger btn-sm float-right" (click)="removeNPC(npc)"><fa name="minus"></fa></button>
+    </div>
+
+  </div>
+
+</div>

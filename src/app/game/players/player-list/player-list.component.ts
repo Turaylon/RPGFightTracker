@@ -23,7 +23,6 @@ export class PlayerListComponent implements OnInit {
   }
 
   removePlayer(player : Player){
-
     this.gameService.removePlayer(player);
   }
 
