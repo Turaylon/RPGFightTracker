@@ -9,13 +9,22 @@ import {Player} from '../../../shared/models/Player';
 })
 export class PlayerListComponent implements OnInit {
 
-  constructor(private gameService: GameService) { }
+  protected players : Player[];
+
+  constructor(private gameService: GameService) {
+    this.gameService.playersChanged$.subscribe(players=> this.players = players);
+  }
 
   ngOnInit() {
   }
 
   addNewPlayer(){
     this.gameService.addPlayer(new Player("Aria Stark",10,15));
+  }
+
+  removePlayer(player : Player){
+
+    this.gameService.removePlayer(player);
   }
 
 }

@@ -5,8 +5,7 @@ export class Game {
   protected phases: Phase[];
   private currentPhase: Phase;
 
-  constructor(private players, private npcs){
-    this.currentPhase = new Phase(this.getCharacters())
+  constructor(public players = [], public npcs = []){
   }
 
   public getCharacters(): Character[] {
