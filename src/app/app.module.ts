@@ -9,6 +9,7 @@ import { PlayerListComponent } from './game/players/player-list/player-list.comp
 import { PlayerComponent } from './game/players/player/player.component';
 import { NpcListComponent } from './game/npcs/npc-list/npc-list.component';
 import {NpcComponent} from './game/npcs/npc/npc.component';
+import {AngularFontAwesomeModule} from 'angular-font-awesome';
 
 
 @NgModule({
@@ -21,7 +22,8 @@ import {NpcComponent} from './game/npcs/npc/npc.component';
     NpcComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    AngularFontAwesomeModule
   ],
   providers: [GameService],
   bootstrap: [AppComponent]

@@ -1,16 +1,17 @@
 <div>
-  <button class="btn btn-primary" (click)="addNewPlayer()">Add Player</button>
+  <button class="btn btn-primary mb-3" (click)="addNewPlayer()">Add Player</button>
 
   <div class="list-group">
 
-    <a *ngFor="let player of players;" href="#" class="list-group-item list-group-item-action flex-column align-items-start">
+    <div *ngFor="let player of players;" class="list-group-item list-group-item-action flex-column align-items-start mb-2">
       <div class="d-flex w-100 justify-content-between">
         <h5 class="mb-1">{{ player.name }}</h5>
         <small>PF: {{ player.vitalPoints }}</small>
       </div>
       <small>Initiative: {{ player.initiative }}</small>
-      <button class="btn btn-danger" (click)="removePlayer(player)">Remove</button>
-    </a>
+
+      <button class="btn btn-danger btn-sm float-right" (click)="removePlayer(player)"><fa name="minus"></fa></button>
+    </div>
 
   </div>
 
