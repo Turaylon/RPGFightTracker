@@ -2,13 +2,15 @@ import {Character} from './Character';
 import {Action} from './Action';
 
 export class Round {
-  public actions: Action[];
+  private _actions: Action[];
 
-  constructor(public owner: Character) {
+  get actions(): Action[] {
+    return this._actions;
+  }
+  set actions(value: Action[]) {
+    this._actions = value;
   }
 
-  public addAction(action: Action): Round {
-    this.actions.push(action);
-    return this;
+  constructor(public owner: Character) {
   }
 }

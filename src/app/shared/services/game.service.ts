@@ -8,30 +8,41 @@ import {Character} from '../models/Character';
 export class GameService {
 
   public game: Game;
+  protected players: Player[] = [];
+  protected npcs: NPC[] = [];
 
-  public charactersChanged : EventEmitter<Character[]>;
+  private npcsChanged$: EventEmitter<Character[]>;
+  private playersChanged$: EventEmitter<Character[]>;
 
   constructor() {
-    this.charactersChanged = new EventEmitter<Character[]>();
-    this.game = new Game();
+    this.npcsChanged$ = new EventEmitter<Character[]>();
+    this.playersChanged$ = new EventEmitter<Character[]>();
   }
 
-  public addPlayer(player: Player): GameService{
-    this.game.addPlayer(player);
-    this.charactersChanged.emit(this.game.getCharacters());
+  public addPlayer(player: Player): GameService {
+    this.players = [...this.players,player];
+    this.playersChanged$.emit(this.players);
     return this;
   }
 
-  public addNPC(npc: NPC): GameService{
-    this.game.addNPC(npc);
-    this.charactersChanged.emit(this.game.getCharacters());
+  public addNPC(npc: NPC): GameService {
+    this.npcs = [...this.npcs,npc];
+    this.npcsChanged$.emit(this.npcs);
     return this;
   }
 
-  public startGame() : Game{
-    return this.game.initGame();
+  public startGame(): Game {
+    return this.game = new Game(this.players,this.npcs);
+  }
+
+  public getPlayers() {
+    return this.players;
   }
 
 
 
 }
+
+
+
+

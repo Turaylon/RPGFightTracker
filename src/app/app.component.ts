@@ -16,28 +16,28 @@ export class AppComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    console.log(
-      this.gameService
-        .addPlayer(new Player('Aria Stark', 10, 15))
-        .addPlayer(new Player('John Snow', 20, 9))
-        .addNPC(new NPC('White Walker 1', 50, 5, NPCAttitude.HOSTILE))
-        .startGame()
-    );
-
-    console.log("First Round is for " + this.gameService.game.getRound().owner.name);
-    console.log("Next Round is for " + this.gameService.game.getRound().owner.name);
-    console.log("Next Round is for " + this.gameService.game.getRound().owner.name);
-    console.log("Next Round is for " + this.gameService.game.getRound().owner.name);
-    console.log("Next Round is for " + this.gameService.game.getRound().owner.name);
-
-    console.log("Adding new NPC Drogon" , this.gameService.addNPC(new NPC("Drogon",100,25,NPCAttitude.ALLY)));
-    console.log("Next Round is for " + this.gameService.game.getRound().owner.name);
-    console.log("Next Round is for " + this.gameService.game.getRound().owner.name);
-    console.log("Next Round is for " + this.gameService.game.getRound().owner.name);
-    console.log("Next Round is for " + this.gameService.game.getRound().owner.name);
-    console.log("Next Round is for " + this.gameService.game.getRound().owner.name);
-
-    console.log(this.gameService);
+    // console.log(
+    //   this.gameService
+    //     .addPlayer(new Player('Aria Stark', 10, 15))
+    //     .addPlayer(new Player('John Snow', 20, 9))
+    //     .addNPC(new NPC('White Walker 1', 50, 5, NPCAttitude.HOSTILE))
+    //     .startGame()
+    // );
+    //
+    // console.log("First Round is for " + this.gameService.game.getRound().owner.name);
+    // console.log("Next Round is for " + this.gameService.game.getRound().owner.name);
+    // console.log("Next Round is for " + this.gameService.game.getRound().owner.name);
+    // console.log("Next Round is for " + this.gameService.game.getRound().owner.name);
+    // console.log("Next Round is for " + this.gameService.game.getRound().owner.name);
+    //
+    // console.log("Adding new NPC Drogon" , this.gameService.addNPC(new NPC("Drogon",100,25,NPCAttitude.ALLY)));
+    // console.log("Next Round is for " + this.gameService.game.getRound().owner.name);
+    // console.log("Next Round is for " + this.gameService.game.getRound().owner.name);
+    // console.log("Next Round is for " + this.gameService.game.getRound().owner.name);
+    // console.log("Next Round is for " + this.gameService.game.getRound().owner.name);
+    // console.log("Next Round is for " + this.gameService.game.getRound().owner.name);
+    //
+    // console.log(this.gameService);
 
 
   }
